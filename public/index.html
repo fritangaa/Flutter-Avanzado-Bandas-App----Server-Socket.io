@@ -18,11 +18,25 @@
             console.log("Perdimos conexion con el servidor");
         });
 
-        socket.emit("mensaje", {nombre: "Max"});
+        socket.emit("mensaje", {nombre: "HTML"});
+
+
 
         socket.on("mensaje", function(payload) {
             console.log("Escuchando: ", payload);
         });
+
+        socket.on("nuevo-mensaje", function(payload) {
+            console.log("Escuchando flutter: ", payload);
+        });
+
+
+
+        socket.on("active-bands", function(bands) {
+            console.clear;
+            console.table(bands);
+        });
+
     </script>
 </body>
 </html>
